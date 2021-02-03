@@ -1,0 +1,483 @@
+@prefix : <http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix osamo: <http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/untitled-ontology-20> .
+@base <http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology> .
+
+<http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/mo/level
+<http://purl.org/ontology/mo/level> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+<http://www.w3.org/2004/02/skos/core#changeNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+<http://www.w3.org/2004/02/skos/core#editorialNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+<http://www.w3.org/2004/02/skos/core#historyNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+<http://www.w3.org/2004/02/skos/core#scopeNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#hasGenre
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain <http://purl.org/ontology/mo/Track> ;
+          rdfs:range <http://purl.org/ontology/mo/Genre> ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:23:07Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#hasTrack
+:hasTrack rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Album ;
+          rdfs:range <http://purl.org/ontology/mo/Track> ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:53:20Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#involved
+:involved rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+          rdfs:range :RadioShow ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:19:37Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#performBy
+:performBy rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://purl.org/ontology/mo/Track> ;
+           rdfs:range :Artist ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:54:55Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#played
+:played rdf:type owl:ObjectProperty ;
+        owl:inverseOf :playedOn ;
+        <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:49:55Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#playedOn
+:playedOn rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://purl.org/ontology/mo/Track> ;
+          rdfs:range :Radio ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:47:30Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#present
+:present rdf:type owl:ObjectProperty ;
+         owl:inverseOf :presentedBy ;
+         rdfs:domain :DJ ;
+         rdfs:range <http://purl.org/ontology/mo/Track> ;
+         <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:58:31Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#presentedAt
+:presentedAt rdf:type owl:ObjectProperty ;
+             owl:inverseOf <http://www.w3.org/2006/time#hasTime> ;
+             <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:01:37Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#presentedBy
+:presentedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:58:54Z"^^xsd:dateTime .
+
+
+###  http://www.w3.org/2006/time#dayOfWeek
+<http://www.w3.org/2006/time#dayOfWeek> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain :Time ;
+                                        rdfs:comment "El día de la semana, cuyo valor es un miembro de la clase 'día de la semana'." ,
+                                                     "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
+                                        rdfs:label "day of week"@en ,
+                                                   "día de la semana"@es ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "El día de la semana, cuyo valor es un miembro de la clase 'día de la semana'."@es ,
+                                                                                         "The day of week, whose value is a member of the class time:DayOfWeek"@en .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://purl.org/ontology/mo/Track> ,
+                                                  [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <http://purl.org/ontology/mo/Track>
+                                                                  :RadioShow
+                                                                )
+                                                  ] ;
+                                      rdfs:range :Time ;
+                                      rdfs:comment "Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa."@es ,
+                                                   "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+                                      rdfs:label "has time"@en ,
+                                                 "tiene tiempo"@es ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa."@es ,
+                                                                                       "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#editorialNote> "Característica arriesgada -añadida en la revisión del 2017 que no ha sido todavía utilizada de forma amplia."@es ,
+                                                                                          "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#day
+:day rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Time ;
+     rdfs:range xsd:int ;
+     <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+     <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:07:52Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#hour
+:hour rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Time ;
+      rdfs:range xsd:int ;
+      <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:11:46Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#minute
+:minute rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Time ;
+        rdfs:range xsd:int ;
+        <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:17:05Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#month
+:month rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Time ;
+       rdfs:range [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:int ;
+                    owl:withRestrictions ( [ xsd:minExclusive "0"^^xsd:int
+                                           ]
+                                           [ xsd:maxExclusive "13"^^xsd:int
+                                           ]
+                                         )
+                  ] ,
+                  rdfs:Literal ;
+       <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:12:28Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#trackName
+:trackName rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://purl.org/ontology/mo/Track> ;
+           rdfs:range xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:56:57Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Time ;
+      rdfs:range [ rdf:type rdfs:Datatype ;
+                   owl:onDatatype xsd:int ;
+                   owl:withRestrictions ( [ xsd:minExclusive "0"^^xsd:int
+                                          ]
+                                        )
+                 ] ;
+      <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:15:50Z"^^xsd:dateTime .
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+<http://xmlns.com/foaf/0.1/familyName> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                       rdfs:range rdfs:Literal ;
+                                       rdfs:comment "The family name of some person." ;
+                                       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                       rdfs:label "familyName" ;
+                                       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://xmlns.com/foaf/0.1/firstName
+<http://xmlns.com/foaf/0.1/firstName> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                      rdfs:range rdfs:Literal ;
+                                      rdfs:comment "The first name of a person." ;
+                                      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                      rdfs:label "firstName" ;
+                                      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://xmlns.com/foaf/0.1/gender
+<http://xmlns.com/foaf/0.1/gender> rdf:type owl:DatatypeProperty ,
+                                            owl:FunctionalProperty ;
+                                   rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+                                   rdfs:range rdfs:Literal ;
+                                   rdfs:comment "The gender of this Agent (typically but not necessarily 'male' or 'female')." ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                   rdfs:label "gender" ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/ontology/mo/Genre
+<http://purl.org/ontology/mo/Genre> rdf:type owl:Class ;
+                                    <http://purl.org/ontology/mo/level> "2" ;
+                                    rdfs:comment """
+        An expressive style of music.
+        
+        Any taxonomy can be plug-in here. You can either define a genre by yourself, like this:
+
+        :mygenre a mo:Genre; dc:title \"electro rock\".
+
+        Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
+        clients to access easily really detailed structured information about the genre you are refering to.
+    """ ;
+                                    rdfs:isDefinedBy <http://purl.org/ontology/mo/> ;
+                                    rdfs:label "Genre" ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://purl.org/ontology/mo/Track
+<http://purl.org/ontology/mo/Track> rdf:type owl:Class ;
+                                    <http://purl.org/ontology/mo/level> "1" ;
+                                    rdfs:comment "A track on a particular record" ;
+                                    rdfs:isDefinedBy <http://purl.org/ontology/mo/> ;
+                                    rdfs:label "Track"@en ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#Album
+:Album rdf:type owl:Class ;
+       <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:53:02Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#Artist
+:Artist rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+        <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:54:17Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#DJ
+:DJ rdf:type owl:Class ;
+    rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+    <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+    <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:58:11Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#JazzMusic
+:JazzMusic rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.org/ontology/mo/Genre> ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:45:34Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#OrchestraMusic
+:OrchestraMusic rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.org/ontology/mo/Genre> ;
+                <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:44:10Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#PopMusic
+:PopMusic rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.org/ontology/mo/Genre> ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:46:21Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#Producer
+:Producer rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:25:16Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#Radio
+:Radio rdf:type owl:Class ;
+       <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:48:36Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#RadioShow
+:RadioShow rdf:type owl:Class ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:20:08Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#RockMusic
+:RockMusic rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.org/ontology/mo/Genre> ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:45:24Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#SoulMusic
+:SoulMusic rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.org/ontology/mo/Genre> ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:46:42Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#Technician
+:Technician rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+            <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:24:59Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#Time
+:Time rdf:type owl:Class ;
+      <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+      <http://purl.org/dc/elements/1.1/date> "2021-02-02T18:02:41Z"^^xsd:dateTime .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class ;
+                                                    owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#GeneralDateTimeDescription
+<http://www.w3.org/2006/time#GeneralDateTimeDescription> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#TimeZone
+<http://www.w3.org/2006/time#TimeZone> rdf:type owl:Class ;
+                                       rdfs:comment """A Time Zone specifies the amount by which the local time is offset from UTC. 
+	A time zone is usually denoted geographically (e.g. Australian Eastern Daylight Time), with a constant value in a given region. 
+The region where it applies and the offset from UTC are specified by a locally recognised governing authority."""@en ,
+                                                    """Un huso horario especifica la cantidad en que la hora local está desplazada con respecto a UTC.
+        Un huso horario normalmente se denota geográficamente (p.ej. el horario de verano del este de Australia), con un valor constante en una región dada.
+        La región donde aplica y el desplazamiento desde UTC las especifica una autoridad gubernamental localmente reconocida."""@es ;
+                                       rdfs:label "Time Zone"@en ,
+                                                  "huso horario"@es ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> """A Time Zone specifies the amount by which the local time is offset from UTC. 
+	A time zone is usually denoted geographically (e.g. Australian Eastern Daylight Time), with a constant value in a given region. 
+The region where it applies and the offset from UTC are specified by a locally recognised governing authority."""@en ,
+                                                                                        """Un huso horario especifica la cantidad en que la hora local está desplazada con respecto a UTC.
+    Un huso horario normalmente se denota geográficamente (p.ej. el horario de verano del este de Australia), con un valor constante en una región dada.
+    La región donde aplica y el desplazamiento desde UTC las especifica una autoridad gubernamental localmente reconocida."""@es ;
+                                       <http://www.w3.org/2004/02/skos/core#historyNote> """En la versión original de OWL-Time de 2006, se definió, en un espacio de nombres diferente \"http://www.w3.org/2006/timezone#\", la clase 'huso horario', con varias propiedades específicas correspondientes a un modelo específico de huso horario.
+    En la versión actual hay una clase con el mismo nombre local en el espacio de nombres de OWL-Time, eliminando la dependencia del espacio de nombres externo.
+    Un axioma de alineación permite que los datos codificados de acuerdo con la versión anterior sean consistentes con la ontología actualizada."""@es ,
+                                                                                         """In the original 2006 version of OWL-Time, the TimeZone class, with several properties corresponding to a specific model of time-zones, was defined in a separate namespace \"http://www.w3.org/2006/timezone#\". 
+
+In the current version a class with same local name is put into the main OWL-Time namespace, removing the dependency on the external namespace. 
+
+An alignment axiom 
+	tzont:TimeZone rdfs:subClassOf time:TimeZone . 
+allows data encoded according to the previous version to be consistent with the updated ontology. """ ;
+                                       <http://www.w3.org/2004/02/skos/core#note> """A designated timezone is associated with a geographic region. However, for a particular region the offset from UTC often varies seasonally, and the dates of the changes may vary from year to year. The timezone designation usually changes for the different seasons (e.g. Australian Eastern Standard Time vs. Australian Eastern Daylight Time). Furthermore, the offset for a timezone may change over longer timescales, though its designation might not.  
+
+Detailed guidance about working with time zones is given in http://www.w3.org/TR/timezone/ ."""@en ,
+                                                                                  "An ontology for time zone descriptions was described in [owl-time-20060927] and provided as RDF in a separate namespace tzont:. However, that ontology was incomplete in scope, and the example datasets were selective. Furthermore, since the use of a class from an external ontology as the range of an ObjectProperty in OWL-Time creates a dependency, reference to the time zone class has been replaced with the 'stub' class in the normative part of this version of OWL-Time."@en ,
+                                                                                  """Un huso horario designado está asociado con una región geográfica. Sin embargo, para una región particular el desplazamiento desde UTC a menudo varía según las estaciones, y las fechas de los cambios pueden variar de un año a otro. La designación de huso horario  normalmente cambia de una estación a otra (por ejemplo, el horario estándar frente al horario de verano ambos del este de Australia). Además, del desplazamiento para un huso horario puede cambiar sobre escalas de tiempo mayores, aunque su designación no lo haga.
+    Se puede encontrar una guía detallada sobre el funcionamiento de husos horarios en http://www.w3.org/TR/timezone/.\"@es , \"En [owl-time-20060927] se describió una ontología para descripciones de husos horarios, y se proporcionó en un espacio de nombres separado tzont:. Sin embargo, dicha ontología estaba incompleta en su alcance, y el ejemplo de conjuntos de datos (datasets) era selectivo. Además, puesto que el uso de una clase de una ontología externa como el rango de una propiedad de objeto en OWL-Time crea una dependencia, la referencia a la clase huso horario se ha reemplazado por una clase que viene a ser un \"cajón de sastre\" en la en la parte normativa de esta versión de OWL-Time."""@es ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "En esta implementación 'huso horario' no tiene definidas propiedades. Se debería pensar como una superclase \"abstracta\" de todas las implementaciones de huso horario específicas."@es ,
+                                                                                       "In this implementation TimeZone has no properties defined. It should be thought of as an 'abstract' superclass of all specific timezone implementations." .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:disjointWith <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ,
+                                                   <http://xmlns.com/foaf/0.1/Agent> ;
+                                   owl:disjointWith <http://xmlns.com/foaf/0.1/Project> ;
+                                   rdfs:comment "A person." ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                   rdfs:label "Person" ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/osama.abusitta/ontologies/2021/1/musicOntology#WattRadio
+:WattRadio rdf:type owl:NamedIndividual ,
+                    :Radio ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-02T17:50:51Z"^^xsd:dateTime ;
+           rdfs:label "Watt Radio"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :JazzMusic
+                :OrchestraMusic
+                :PopMusic
+                :RockMusic
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
