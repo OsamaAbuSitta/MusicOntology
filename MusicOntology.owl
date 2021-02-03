@@ -549,6 +549,26 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
                 <http://purl.org/dc/elements/1.1/date> "2021-02-03T23:34:05Z"^^xsd:dateTime .
 
 
+###  https://raw.githubusercontent.com/OsamaAbuSitta/MusicOntology/master/MusicOntology.owl#PopMusic
+:PopMusic rdf:type owl:NamedIndividual ,
+                   :Genre ;
+          <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/date> "2021-02-03T23:49:16Z"^^xsd:dateTime .
+
+
+###  https://raw.githubusercontent.com/OsamaAbuSitta/MusicOntology/master/MusicOntology.owl#RockMusic
+:RockMusic rdf:type owl:NamedIndividual ,
+                    :Genre ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-03T23:49:30Z"^^xsd:dateTime .
+
+
+###  https://raw.githubusercontent.com/OsamaAbuSitta/MusicOntology/master/MusicOntology.owl#SoulMusic
+:SoulMusic rdf:type owl:NamedIndividual ;
+           <http://purl.org/dc/elements/1.1/creator> "osama.abusitta"^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/date> "2021-02-03T23:49:41Z"^^xsd:dateTime .
+
+
 ###  https://raw.githubusercontent.com/OsamaAbuSitta/MusicOntology/master/MusicOntology.owl#Taki_Taki_ft
 :Taki_Taki_ft rdf:type owl:NamedIndividual ,
                        <http://purl.org/ontology/mo/Track> ;
